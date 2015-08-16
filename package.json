@@ -1,0 +1,18 @@
+{
+  "name": "kanban_app",
+  "version": "0.1.0",
+  "description": "Simple Kanban app",
+  "main": "index.js",
+  "scripts": {
+    "start" : "webpack-dev-server"
+  },
+  "author": "Robert Smith",
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^1.6.1",
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.11.0",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "dependencies": {}
+}
