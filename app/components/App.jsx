@@ -43,6 +43,15 @@ export default class App extends React.Component {
         });
     }
     itemEdited(noteId, task) {
-        console.log('item edited', noteId, task);
+        let notes = this.state.notes;
+        const noteIndex = notes.findIndex((note) => note.id === noteId);
+
+        if(noteIndex < 0) {
+            return console.warn('Failed to find note', notes, noteId);
+        }
+
+        notes[noteIndex].task = task;
+
+        this.setState({notes});
     }
 }
