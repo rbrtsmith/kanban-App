@@ -40,16 +40,16 @@ common = {
 };
 
 if(TARGET === 'dev') {
-  module.exports = merge(common, {
-    devtool: 'eval',
-    module: {
-      loaders: [
-        {
-          test: /\.jsx?$/,
-          loaders: ['react-hot', 'babel?stage=1'],
-          include: path.resolve(ROOT_PATH, 'app')
+    module.exports = merge(common, {
+        devtool: 'eval',
+        module: {
+            loaders: [
+                {
+                    test: /\.jsx?$/,
+                    loaders: ['react-hot', 'babel?stage=1'],
+                    include: path.resolve(ROOT_PATH, 'app')
+                }
+            ]
         }
-      ]
-    }
-  });
+    });
 }
