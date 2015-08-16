@@ -1,9 +1,12 @@
 var path = require('path'),
 	HtmlwebpackPlugin = require('html-webpack-plugin'),
 	webpack = require('webpack'),
-	ROOT_PATH = path.resolve(__dirname);
+	merge = require('webpack-merge'),
+	TARGET = process.env.TARGET,
+	ROOT_PATH = path.resolve(__dirname),
+	common;
 
-module.exports = {
+common = {
 	entry: path.resolve(ROOT_PATH, 'app/main'),
 	output : {
 		path: path.resolve(ROOT_PATH, 'build'),
@@ -32,3 +35,19 @@ module.exports = {
 		})
 	]
 };
+
+if (TARGET === 'dev') {
+	module.exports = merge(common, {
+		devtool: 'eval',
+		devserver: {
+			colors: true,
+			historyApiFallback: true,
+			hot: true,
+			inline: true,
+			progress: true
+		},
+		plugins: [
+			new webpack.HotModuleReplacementPlugin()
+		]
+	});
+}

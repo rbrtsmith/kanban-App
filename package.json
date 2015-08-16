@@ -4,7 +4,7 @@
   "description": "Simple Kanban app",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "TARGET=dev webpack-dev-server"
   },
   "author": "Robert Smith",
   "license": "MIT",
@@ -14,7 +14,8 @@
     "node-libs-browser": "^0.5.2",
     "style-loader": "^0.12.3",
     "webpack": "^1.11.0",
-    "webpack-dev-server": "^1.10.1"
+    "webpack-dev-server": "^1.10.1",
+    "webpack-merge": "^0.1.3"
   },
   "dependencies": {}
 }
